@@ -10,7 +10,7 @@ const FilteredUsers = ({ users, filter }) => {
             <Grid container spacing={3} >
                 {users.map((user) => {
                     return (<Grid key={`allusers_${user.name}`} item sm={12} lg={3}>
-                        <PersonalCard user={user} />
+                        <PersonalCard key={`allusers_personalCard_${user.name}`} user={user} />
                     </Grid>
                     )
                 })

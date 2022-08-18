@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Typography } from '@mui/material'
+import Box from '@mui/material/Box';
 import Button from "@mui/material/Button";
 import { makeStyles } from "@mui/styles";
 import Chat from '../Chat'
@@ -99,9 +100,12 @@ const Users = () => {
                     Archived
                 </Button>
 
-
-                <Chat users={users} filter="active" />
-                <FilteredUsers users={users} filter={filterSelector} />
+                <Box p={2}>
+                    <Chat users={users} filter="active" />
+                </Box>
+                <Box p={2}>
+                    <FilteredUsers users={users} filter={filterSelector} />
+                </Box>
             </div>
     )
 }

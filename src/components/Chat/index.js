@@ -45,7 +45,7 @@ const Chat = ({ users, filter }) => {
                         margin: "0px 8px",
                         cursor: "pointer",
                     }}>
-                        <PersonalCard user={user} />
+                        <PersonalCard key={`personalCard_${user.name}`} user={user} />
                     </Grid>
                     )
                 })
