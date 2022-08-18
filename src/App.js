@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+
+import { Box, Button, Grid } from '@mui/material';
 import './App.css';
+import Searchbar from './components/Searchbar';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import FilterAlt from '@mui/icons-material/FilterAlt';
+import Users from './components/Users';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box p={2} >
+      <Grid container display="flex" justifyContent="space-between">
+        <Grid item sm={8} lg={6} >
+          <Searchbar />
+        </Grid>
+        <Grid item lg={4} />
+        <Grid item sm={8} lg={1}>
+          <Button variant='outlined' startIcon={<FilterAlt />} sx={{ color: "#C1C1C1", borderColor: "#C1C1C1", borderRadius: "15px" }}>
+            Filters
+          </Button>
+        </Grid>
+        <Grid item sm={8} lg={1}>
+          <Button variant='outlined' sx={{ color: "#C1C1C1", borderColor: "#C1C1C1", borderRadius: "15px" }}>
+            <CalendarMonthIcon />
+          </Button>
+        </Grid>
+      </Grid>
+      <Users />
+    </Box>
   );
 }
 
